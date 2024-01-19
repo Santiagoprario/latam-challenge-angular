@@ -6,6 +6,7 @@ import { ButtonComponent } from '../../components/button/button.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {  
-  constructor(private searchIdRequest: SearchService, private _snackBar: MatSnackBar ) {}
+  constructor(private searchIdRequest: SearchService, private _snackBar: MatSnackBar, public router: Router ) {}
 
   public searchTerm = new FormControl('');
 
@@ -40,6 +41,14 @@ export class SearchComponent {
 
   translateKey(key: string): string {
     return this.translationMap[key] || key;
+  }
+
+  isDisabled () {
+    return !this.form.value.userId;
+  }
+
+  onGoBack () :void {
+    this.router.navigateByUrl('/home')
   }
 
   onSubmit(): void {

@@ -39,11 +39,11 @@ export class LoginComponent {
     if (!this.form.value.email || !this.form.value.password) return;
     this.loginService.login(this.form.value.email, this.form.value.password).subscribe(success => {
       if (success) {
-        this._snackBar.open('Bienvenido!', 'X', { duration: 3000, horizontalPosition: 'right', verticalPosition: 'top'});
+        this._snackBar.open('Bienvenido!', 'X', { duration: 3000, horizontalPosition: 'right'});
         this.router.navigateByUrl("/home");
       } else {
-        this._snackBar.open("Usuario o contaseña incorrecta", "X") 
-       //  { duration: 3000, panelClass: 'snackBar'});
+        this._snackBar.open("Usuario o contaseña incorrecta", "X", 
+         { duration: 3000, panelClass: 'snackBar'});
 
       }
     });

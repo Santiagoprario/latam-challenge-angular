@@ -17,6 +17,7 @@ Esta aplicación ha sido desarrollada con el siguiente Stack:
 El proyecto contiene rutas privadas y rutas publicas, las cuales validaran si la sesion esta iniciada para poder acceder. Los datos de session se guardan en el localStorage.
 
 Al ser una version tan nueva de Angular, todavia no soporta bien in-memory-api, por lo que por cuestiones de tiempo y de practicidad se instaló la librería `json-server` y `json-auth-server` para reemplazarla.
+La posición del snack bar no es la deseada, no esta tomando z-index, y se perfila atras. Queda para revisar comportamiento.
 
 La API levanta los siguientes endpoints:
 

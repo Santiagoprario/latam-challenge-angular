@@ -1,12 +1,15 @@
-<div>
+<div class="div-container">
+  <div class="card-container">
+    <form [formGroup]="form">
       <div class="search-bar-container">
-        <form [formGroup]="form" class="search-bar-container">
-          <div class="search-bar-container">
-            <input matInput type="text" id="userId" name="userId" formControlName="userId" placeholder="Ingrese ID" class="login-input">
-          </div>
-            <app-button (click)="onSubmit()" [label]="'Búscar Id'" />
-        </form>
-      </div> 
+        <input matInput type="text" id="userId" name="userId" formControlName="userId" placeholder="Ingrese ID" class="login-input">
+      </div>
+      <div class="buttons-container">
+        <app-button (click)="onSubmit()" [disabled]="isDisabled()" [label]="'Búscar Id'" />
+        <app-button (click)="onGoBack()" [label]="'Volver'" />
+      </div>
+    </form>
+  </div> 
   <div class="card-container">
     <div *ngIf="result" class="container">
       <h2>Detalle del Asociado Nro. {{ result.id }}</h2>

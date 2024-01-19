@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-right: 30px;
+  margin-top: 30px;
 }
 
 .container {
@@ -60,4 +60,24 @@ mat-form-field {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3%;
+
+  & > *:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  max-width: 300px;
+  margin-top: 30px;
 }
