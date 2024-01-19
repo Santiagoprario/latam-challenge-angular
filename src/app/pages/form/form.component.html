@@ -1,0 +1,56 @@
+<div>
+  <div class="container">
+    <h2>Agregar Formulario</h2>
+    <form [formGroup]="form" >
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input type="text" matInput [formControl]="form.controls.name" [errorStateMatcher]="matcher"
+                 placeholder="Nombre" class="login-input">
+          @if (form.controls.name.hasError('required')) {
+          <mat-error>Por favor ingrese un Nombre</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input type="email" matInput [formControl]="form.controls.email" [errorStateMatcher]="matcher"
+                 placeholder="Email" class="login-input">
+          @if (form.controls.email.hasError('email') && !form.controls.email.hasError('required')) {
+            <mat-error>Por favor ingrese un email válido</mat-error>
+          }
+          @if (form.controls.email.hasError('required')) {
+            <mat-error>El email es <strong>requerido</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input type="text" matInput [formControl]="form.controls.phone" [errorStateMatcher]="matcher"
+                 placeholder="Télefono" class="login-input">
+          @if (form.controls.phone.hasError('required')) {
+            <mat-error>Por favor ingrese un telefono válido</mat-error>
+          }
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input type="number" matInput [formControl]="form.controls.age" [errorStateMatcher]="matcher"
+                 placeholder="Edad" class="login-input">
+          @if (form.controls.age.hasError('min') && !form.controls.age.hasError('required')) {
+            <mat-error>Debes ser mayor de 18 años</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <label for="">Es Socio LATAMPass ?</label>
+      <mat-radio-group  aria-labelledby="Es socio LatamPass?" [formControl]="form.controls.isAssociated" class="example-radio-group">
+        <mat-radio-button value={{true}}>Si</mat-radio-button>
+        <mat-radio-button value={{false}}>No</mat-radio-button>
+      </mat-radio-group>
+      <div class="buttons-container">
+        <app-button (click)="onGoBack()" [label]="'Volver'" />
+        <app-button [disabled]="!form.valid" (click)="onSubmit()" [label]="'Guardar'" />
+      </div>  
+    </form>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2%;
+
+  & > *:not(:last-child) {
+    margin-right: 40px;
+  }
+}

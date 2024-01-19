@@ -1,0 +1,29 @@
+<div>
+  <div class="login-container">
+    <div class="logo-container">
+      <img src='./../../assets/latam-logo.png' alt='logo' class="logo" />
+    </div>
+    <h2>Iniciar Sesión</h2>
+    <form [formGroup]="form" >
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input type="email" matInput [formControl]="form.controls.email" [errorStateMatcher]="matcher"
+                 placeholder="Email" class="login-input">
+          @if (form.controls.email.hasError('email') && !form.controls.email.hasError('required')) {
+            <mat-error>Por favor ingrese un email válido</mat-error>
+          }
+          @if (form.controls.email.hasError('required')) {
+            <mat-error>El email es <strong>requerido</strong></mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" id="password" name="password" formControlName="password" placeholder="Contraseña" class="login-input">
+      </mat-form-field>
+      <div>
+        <app-button [disabled]="!form.valid" (click)="login()" [label]="'Iniciar Sesión'" />
+      </div>  
+    </form>
+  </div>
+</div>

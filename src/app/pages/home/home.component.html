@@ -1,0 +1,13 @@
+<div>
+  <app-header />
+  <div class="buttons-container">
+    <a routerLink="form">
+      <app-button [label]="'Crear Nuevo Afiliado'" />
+    </a>
+    <a routerLink="search">
+      <app-button [label]="'Buscar Afiliados'" />
+    </a>
+  </div>
+  <router-outlet></router-outlet>
+  <app-footer />
+</div>

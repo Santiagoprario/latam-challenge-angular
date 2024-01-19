@@ -1,0 +1,90 @@
+.login-container {
+  display: flex;
+  width: 30%;
+  max-width: 500px;
+  margin-top: 10%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    width: 50%;
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #241178;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+.snackBar {
+  margin: 0 !important;
+  position: absolute;
+  right: 0;
+  top: 60px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

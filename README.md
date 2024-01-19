@@ -1,27 +1,100 @@
-# LatamChallengeAngular
+## LatamChallengeAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+El proyecto fue generado con Angular CLI version 17.1.0.
 
-## Development server
+## Comentarios Generales
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Esta aplicación ha sido desarrollada con el siguiente Stack:
+- TypeScript
+- Angular v17 (última version dic-23)
+- Angular-Material
+- Angular-Forms
+- httpClient
+- json-server
+- routerModule
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El proyecto contiene rutas privadas y rutas publicas, las cuales validaran si la sesion esta iniciada para poder acceder. Los datos de session se guardan en el localStorage.
 
-## Build
+Al ser una version tan nueva de Angular, todavia no soporta bien in-memory-api, por lo que por cuestiones de tiempo y de practicidad se instaló la librería `json-server` y `json-auth-server` para reemplazarla.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+La API levanta los siguientes endpoints:
 
-## Running unit tests
+- GET  -> [http://localhost:3001/users](http://localhost:3001/users)
+- POST -> [http://localhost:3001/users](http://localhost:3001/users)
+- POST -> [http://localhost:3001/login](http://localhost:3001/login)
+- GET  -> [http://localhost:3001/associates](http://localhost:3001/associates)
+- POST -> [http://localhost:3001/associates](http://localhost:3001/associates)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Primeros Pasos
 
-## Running end-to-end tests
+Es necesario tener Node v20 o superior para ejecutar la aplicación.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Instala la aplicación con el siguiente comando:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ejecutar json-server:
+
+```bash
+npm run server
+```
+
+Ejecutar Aplicación:
+
+```bash
+npm run start
+```
+
+## Usuario por Defecto
+
+El usuario por defecto para iniciar sesión es:
+
+- **Email:** admin@admin.com
+- **Contraseña:** 123456
+
+Si deseas iniciar sesión con otro usuario, realiza la siguiente petición con Postman:
+
+- **URL:** [http://localhost:3001/users](http://localhost:3001/users)
+- **Método:** POST
+- **Body:** { "email": "tu_email", "password": "tu_contraseña" }
+
+## Objetivo
+
+Se pide crear una aplicación básica que incluya un login, escritura y lectura de datos. Esto último utilizando una base de datos en memoria. A continuación, se describen los distintos ítems de este challenge:
+
+### Login
+
+- Se debe ingresar al aplicativo mediante un login que está conectado a una base de datos en memoria.
+- Debe solicitar usuario y contraseña.
+
+### Home
+
+- Debe mostrar las opciones de "Ingresar datos" y "Buscar datos", cada una que lleve a su respectivo asunto.
+
+### Ingresar Datos
+
+- Debe presentar un formulario en el cual se utilicen componentes como radio, checkbox, textinput, etc.
+- El formulario debe ser reactivo (reactive-forms), por cada input el modelo debe ser actualizado.
+- Incorporar validaciones: E-mail, teléfono, edad (mayor a 18 años).
+- Al guardar los datos, se despliega un diálogo (snack bar, etc.) de "¡Está todo Ok!" y se redirige al home.
+
+### Buscar Datos
+
+- La vista debe presentar un input de búsqueda por ID.
+- La búsqueda se efectúa sobre la DB en memoria (in-memory-web-api).
+- Se deben presentar los datos de la forma que se estime conveniente.
+
+## Entregables
+
+- Código fuente del aplicativo web.
+
+
+
+
+
+---
+
+Santiago Prario - Challenge Latam

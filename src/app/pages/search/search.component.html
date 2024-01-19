@@ -1,0 +1,18 @@
+<div>
+      <div class="search-bar-container">
+        <form [formGroup]="form" class="search-bar-container">
+          <div class="search-bar-container">
+            <input matInput type="text" id="userId" name="userId" formControlName="userId" placeholder="Ingrese ID" class="login-input">
+          </div>
+            <app-button (click)="onSubmit()" [label]="'Búscar Id'" />
+        </form>
+      </div> 
+  <div class="card-container">
+    <div *ngIf="result" class="container">
+      <h2>Detalle del Asociado Nro. {{ result.id }}</h2>
+      <div *ngFor="let keyValuePair of getObjectKeysAndValues(result)" class="field-container">
+        <strong>{{ translateKey(keyValuePair.key)  }}:</strong> {{ keyValuePair.value }}
+      </div>
+    </div>
+  </div>
+</div>
